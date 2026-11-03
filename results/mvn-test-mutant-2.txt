@@ -1,0 +1,132 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< mn.edu.must.sqat:lab08-mockito >-------------------
+[INFO] Building lab08-mockito 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ lab08-mockito ---
+[INFO] Deleting /mnt/c/Users/satan/Desktop/School5A/TestingClass/Lab8/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ lab08-mockito ---
+[INFO] skip non existing resourceDirectory /mnt/c/Users/satan/Desktop/School5A/TestingClass/Lab8/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ lab08-mockito ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 4 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ lab08-mockito ---
+[INFO] skip non existing resourceDirectory /mnt/c/Users/satan/Desktop/School5A/TestingClass/Lab8/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ lab08-mockito ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ lab08-mockito ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running mn.edu.must.sqat.CourseRegistrationServiceTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[ERROR] Tests run: 10, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.064 s <<< FAILURE! -- in mn.edu.must.sqat.CourseRegistrationServiceTest
+[ERROR] mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeEligibleStudent_savesAndEmails -- Time elapsed: 0.067 s <<< FAILURE!
+Wanted but not invoked:
+repository.saveRegistration("S001", "CS201");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeEligibleStudent_savesAndEmails(CourseRegistrationServiceTest.java:45)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S001");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+
+	at mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeEligibleStudent_savesAndEmails(CourseRegistrationServiceTest.java:45)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailThrows_keepsSavedRegistration -- Time elapsed: 0.011 s <<< FAILURE!
+Wanted but not invoked:
+repository.saveRegistration("S001", "CS201");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailThrows_keepsSavedRegistration(CourseRegistrationServiceTest.java:89)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S001");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+
+	at mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailThrows_keepsSavedRegistration(CourseRegistrationServiceTest.java:89)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CourseRegistrationServiceTest.register_activeEligibleStudent_savesAndEmails:45 
+Wanted but not invoked:
+repository.saveRegistration("S001", "CS201");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeEligibleStudent_savesAndEmails(CourseRegistrationServiceTest.java:45)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S001");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+
+[ERROR]   CourseRegistrationServiceTest.register_emailThrows_keepsSavedRegistration:89 
+Wanted but not invoked:
+repository.saveRegistration("S001", "CS201");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailThrows_keepsSavedRegistration(CourseRegistrationServiceTest.java:89)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S001");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS201");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+
+[INFO] 
+[ERROR] Tests run: 10, Failures: 2, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.505 s
+[INFO] Finished at: 2026-11-03T22:07:18+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project lab08-mockito: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /mnt/c/Users/satan/Desktop/School5A/TestingClass/Lab8/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Maven exit code: 1
